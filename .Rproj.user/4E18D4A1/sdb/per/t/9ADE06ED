@@ -1,0 +1,20 @@
+{
+    "collab_server" : "",
+    "contents" : "#\n# This is the user-interface definition of a Shiny web application. You can\n# run the application by clicking 'Run App' above.\n#\n# Find out more about building applications with Shiny here:\n# \n#    http://shiny.rstudio.com/\n##load packages ggplot2,ggthemes,desolve,gridExtra\n\nlibrary(shiny)\nlibrary(ggplot2)\nlibrary(ggthemes)\nlibrary(deSolve)\nlibrary(gridExtra)\n\n\nshinyUI(fluidPage(\n  \n  # Application title\n  titlePanel(\"Population Dynamics of two predators\"),\n  \n  # Sidebar with a slider input for number of bins\n  sidebarLayout(\n    sidebarPanel(\n      h3(\"Change the parameters for the predator dynamics\"),\n      p(\"This is the population dynamics of two predators that share a pathogen,\"),\n      p(\"The Large predator (Lp) has sometimes hunts the smaller predator (Sp)\"),\n      submitButton(\"Update View\", icon(\"refresh\")),\n      sliderInput(inputId = \"betaL\",\n                  label = \"Large predator intraspecific transmition Rate\",\n                  min = 0,\n                  max = 1,\n                  value = 0.21,\n                  step = 0.001),\n      sliderInput(inputId = \"betaS\",\n                  label = \"Small predator intraspecific transmition Rate\",\n                  min = 0,\n                  max = 1,\n                  value = 0.21,\n                  step = 0.001),\n      sliderInput(inputId = \"betaSL\",\n                  label = \"Interespecific Transmition Rate from the small predator to the large one\",\n                  min = 0,\n                  max = 1,\n                  value = 0.03,\n                  step = 0.001),\n      sliderInput(inputId = \"gamma\",\n                  label = \"gamma\",\n                  min = 0,\n                  max = 1,\n                  value = 0.07,\n                  step = 0.001),\n      sliderInput(inputId = \"rhoL\",\n                  label = \"rhoL\",\n                  min = 0,\n                  max = 1,\n                  value = 0.7,\n                  step = 0.001),\n      sliderInput(inputId = \"rhoS\",\n                  label = \"rhoS\",\n                  min = 0,\n                  max = 1,\n                  value = 0.6,\n                  step = 0.001),\n      sliderInput(inputId = \"kl\",\n                  label = \"kl\",\n                  min = 0,\n                  max = 1000,\n                  value = 50),\n      sliderInput(inputId = \"ks\",\n                  label = \"ks\",\n                  min = 0,\n                  max = 1000,\n                  value = 500),\n      numericInput(inputId = \"a\",\n                   label = \"a\",\n                   min = 0,\n                   max = 1,\n                   value = 0.0106287,\n                   step = 0.0000001),\n      numericInput(inputId = \"b\",\n                   label = \"b\",\n                   min = 0,\n                   max = 1,\n                   value = 0.00181,\n                   step = 0.0000001),\n      numericInput(inputId = \"igp\",\n                   label = \"Intraguild predation\",\n                   min = 0,\n                   max = 1,\n                   value = 0.00317633,\n                   step = 0.00000001)\n    ),\n    \n    # Show a plot of the generated distribution\n    mainPanel(\n      plotOutput(\"distPlot\")\n    )\n  )))\n\n\n",
+    "created" : 1472581550321.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1408741497",
+    "id" : "9ADE06ED",
+    "lastKnownWriteTime" : 1472592492,
+    "last_content_update" : 1472592492652,
+    "path" : "~/PredatorGuild/ui.R",
+    "project_path" : "ui.R",
+    "properties" : {
+    },
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
